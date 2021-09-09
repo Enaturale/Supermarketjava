@@ -1,7 +1,10 @@
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.Font;
-public class login {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class login  implements ActionListener{
     JFrame frame;
     JPanel rightpanel;
     JPanel leftpanel;
@@ -60,13 +63,21 @@ public class login {
         //buttons to login and reset
         login = new JButton("Login");
         login.setBounds(30, 250, 130, 30);
+        login.addActionListener(this);
+        login.setBackground(Color.RED);
+        login.setForeground(Color.WHITE);
         reset = new JButton("Reset");
         reset.setBounds(170, 250, 130, 30);
+        reset.addActionListener(this);
+        reset.setBackground(Color.RED);
+        reset.setForeground(Color.WHITE);
+
 
         exit = new JLabel("X");
         exit.setBounds(300, 7, 40, 40);
         exit.setForeground(Color.RED);
         exit.setFont(new Font(null, Font.BOLD, 30));
+        
 
 
         leftpanel.add(nameofSupermarket);
@@ -99,6 +110,18 @@ public class login {
         frame.add(leftpanel);
         frame.setVisible(true);
 
+    }
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+
+        if(e.getSource() == login){
+            products productsPage = new products();
+            frame.dispose();
+        }
+        
     }
     
 }
