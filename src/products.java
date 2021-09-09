@@ -5,7 +5,7 @@ public class products {
 
     JFrame frame;
     JPanel panel1, panel2;
-    JLabel nameOfSupermarket, iconLabel, manageLabel;
+    JLabel nameOfSupermarket, iconLabel, manageLabel, productId, name, quantity;
 
     products(){
         frame = new JFrame("Products Page");
@@ -21,6 +21,7 @@ public class products {
         panel1.setLayout(null);
 
         panel2 = new JPanel();
+        panel2.setLayout(null);
         panel2.setBounds(130, 70, 1130, 570);
 
         nameOfSupermarket = new JLabel("Bee's Supermarket");
@@ -34,15 +35,33 @@ public class products {
 
         manageLabel = new JLabel("Manage Products");
         manageLabel.setForeground(Color.RED);
-        manageLabel.setBounds(40, 40, 200, 50);
+        manageLabel.setBounds(0, 40, 200, 50);
         manageLabel.setFont(new Font(null, Font.BOLD, 30));
+ 
+        productId = new JLabel("Product ID");
+        productId.setForeground(Color.RED);
+        productId.setBounds(20, 500, 100, 30);
+
+        name = new JLabel("Name");
+        name.setForeground(Color.RED);
+        name.setBounds(20, 100, 100, 30);
+
+
+        quantity = new JLabel("Quantity");
+        quantity.setForeground(Color.RED);
+        quantity.setBounds(20, 130, 100, 30);
+
 
         panel1.add(nameOfSupermarket);   
         panel1.add(iconLabel);  
+        panel1.add(panel2);
         
         panel2.add(manageLabel);
+        panel2.add(productId);
+        panel2.add(name);
+        panel2.add(quantity);
 
-        panel1.add(panel2);
+        
     
         frame.add(panel1);
 
