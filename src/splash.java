@@ -34,7 +34,7 @@ public class splash implements MouseListener {
         label.setFont(new Font(null, Font.BOLD, 25));
 
         shoppingcart = new JLabel();
-        shoppingcart.setIcon(new ImageIcon("src/shopping.png"));
+        shoppingcart.setIcon(new ImageIcon("src/shopcart.png"));
         shoppingcart.setBounds(160, 130, 100, 100);
         
 

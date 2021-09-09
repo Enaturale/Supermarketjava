@@ -5,15 +5,15 @@ public class login {
     JFrame frame;
     JPanel rightpanel;
     JPanel leftpanel;
-    JLabel nameofSupermarket;
+
+    JLabel nameofSupermarket, selectrole, passwordText, userId, icon;
+
     JTextField user;
     JPasswordField password;
-    JComboBox role;
-    JLabel selectrole;
-    JLabel passwordText;
-    JLabel userId;
-    JButton login, reset;
 
+    JComboBox role;   
+    
+    JButton login, reset;
 
 
     login(){
@@ -75,6 +75,11 @@ public class login {
         leftpanel.add(login);
         leftpanel.add(reset);
 
+        icon = new JLabel();
+        icon.setIcon(new ImageIcon("src/shopcart.png"));
+        icon.setBounds(20, 100, 100, 100);
+
+        rightpanel.add(icon);  
 
 
         frame.add(rightpanel);
