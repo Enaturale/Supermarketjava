@@ -25,22 +25,27 @@ public class splash implements MouseListener {
         frame.setLayout(null);
 
         panel.setBounds(0, 0, 450, 400);
-        panel.setBackground(Color.ORANGE);
+        panel.setBackground(Color.RED);
         panel.addMouseListener(this);
         panel.setLayout(null);
 
         label = new JLabel("Bee's SuperMarket");
         label.setBounds(100, 50, 300, 50);
         label.setFont(new Font(null, Font.BOLD, 25));
+        label.setForeground(Color.WHITE);
 
         shoppingcart = new JLabel();
         shoppingcart.setIcon(new ImageIcon("src/shopcart.png"));
         shoppingcart.setBounds(160, 130, 100, 100);
+
+        
         
 
         progressstatus = new JLabel("%");
         progressstatus.setBounds(200, 300, 20, 20);
         progressstatus.setFont(new Font(null, Font.ITALIC, 20));
+        progressstatus.setForeground(Color.WHITE);
+
 
         progress = new JProgressBar();
         //progress.setSize(450, 30);

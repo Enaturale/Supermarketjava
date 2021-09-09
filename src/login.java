@@ -6,7 +6,7 @@ public class login {
     JPanel rightpanel;
     JPanel leftpanel;
 
-    JLabel nameofSupermarket, selectrole, passwordText, userId, icon;
+    JLabel nameofSupermarket, selectrole, passwordText, userId, icon, loginLabel, exit;
 
     JTextField user;
     JPasswordField password;
@@ -25,7 +25,7 @@ public class login {
 
         rightpanel = new JPanel();
         rightpanel.setLayout(null);
-        rightpanel.setBackground(Color.ORANGE);
+        rightpanel.setBackground(Color.RED);
         rightpanel.setBounds(0, 0, 150, 350);
 
         leftpanel = new JPanel();
@@ -63,6 +63,10 @@ public class login {
         reset = new JButton("Reset");
         reset.setBounds(170, 250, 130, 30);
 
+        exit = new JLabel("X");
+        exit.setBounds(300, 7, 40, 40);
+        exit.setForeground(Color.RED);
+        exit.setFont(new Font(null, Font.BOLD, 30));
 
 
         leftpanel.add(nameofSupermarket);
@@ -74,12 +78,21 @@ public class login {
         leftpanel.add(passwordText);
         leftpanel.add(login);
         leftpanel.add(reset);
+        leftpanel.add(exit);
 
         icon = new JLabel();
         icon.setIcon(new ImageIcon("src/shopcart.png"));
-        icon.setBounds(20, 100, 100, 100);
+        icon.setBounds(20, 50, 100, 100);
+
+        loginLabel = new JLabel("LOGIN");
+        loginLabel.setBounds(40, 150, 80, 50);
+        loginLabel.setFont(new Font(null, Font.BOLD, 20));
+        loginLabel.setForeground(Color.WHITE);
+
+
 
         rightpanel.add(icon);  
+        rightpanel.add(loginLabel);
 
 
         frame.add(rightpanel);
