@@ -89,7 +89,7 @@ public class login  implements ActionListener{
         leftpanel.add(passwordText);
         leftpanel.add(login);
         leftpanel.add(reset);
-        leftpanel.add(exit);
+       // leftpanel.add(exit);
 
         icon = new JLabel();
         icon.setIcon(new ImageIcon("src/shopcart.png"));
