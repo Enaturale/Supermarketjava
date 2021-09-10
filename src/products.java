@@ -5,7 +5,10 @@ public class products {
 
     JFrame frame;
     JPanel panel1, panel2;
-    JLabel nameOfSupermarket, iconLabel, manageLabel, productId, name, quantity;
+    JLabel nameOfSupermarket, iconLabel, manageLabel, productId, name, quantity, price, category;
+    JTextField productidTf, nameTf, quantityTf, priceTf;
+    JComboBox categoryCombo;
+    JButton add, edit, delete;
 
     products(){
         frame = new JFrame("Products Page");
@@ -33,24 +36,64 @@ public class products {
         iconLabel.setIcon(new ImageIcon("src/shopcart.png"));
         iconLabel.setBounds(20, 150, 100, 100);
 
-        manageLabel = new JLabel("Manage Products");
+        manageLabel = new JLabel("INVENTORY");
         manageLabel.setForeground(Color.RED);
-        manageLabel.setBounds(0, 40, 200, 50);
+        manageLabel.setBounds(380, 20, 400, 50);
         manageLabel.setFont(new Font(null, Font.BOLD, 30));
  
-        productId = new JLabel("Product ID");
+        productId = new JLabel("PRODUCT ID");
         productId.setForeground(Color.RED);
-        productId.setBounds(20, 500, 100, 30);
+        productId.setBounds(40, 80, 100, 30);
 
-        name = new JLabel("Name");
+        productidTf = new JTextField();
+        productidTf.setBounds( 120, 80, 150, 30);
+
+        name = new JLabel("NAME");
         name.setForeground(Color.RED);
-        name.setBounds(20, 100, 100, 30);
+        name.setBounds(40, 120, 100, 30);
+
+        nameTf = new JTextField();
+        nameTf.setBounds( 120, 120, 150, 30);
 
 
-        quantity = new JLabel("Quantity");
+        quantity = new JLabel("QUANTITY");
         quantity.setForeground(Color.RED);
-        quantity.setBounds(20, 130, 100, 30);
+        quantity.setBounds(40, 160, 100, 30);
 
+        quantityTf = new JTextField();
+        quantityTf.setBounds( 120, 160, 150, 30);
+
+        price = new JLabel("PRICE");
+        price.setForeground(Color.RED);
+        price.setBounds(40, 200, 100, 30);
+
+        priceTf = new JTextField();
+        priceTf.setBounds( 120, 200, 150, 30);
+
+        category = new JLabel("CATEGORY");
+        category.setForeground(Color.RED);
+        category.setBounds(40, 240, 100, 30);
+
+        categoryCombo = new JComboBox<>(new Object[]{"FoodStuff", "Beverage", "Clothing", "Oil", "Perfumes"});
+        categoryCombo.setBounds( 120, 240, 150, 30);
+        categoryCombo.setForeground(Color.RED);
+
+        add = new JButton("ADD");
+        add.setForeground(Color.RED);
+        add.setBounds( 40, 280, 80, 30);
+
+
+        edit = new JButton("EDIT");
+        edit.setForeground(Color.RED);
+        edit.setBounds( 130, 280, 80, 30);
+
+
+        delete = new JButton("DELETE");
+        delete.setForeground(Color.RED);
+        delete.setBounds( 220, 280, 100, 30);
+
+
+        
 
         panel1.add(nameOfSupermarket);   
         panel1.add(iconLabel);  
@@ -60,6 +103,17 @@ public class products {
         panel2.add(productId);
         panel2.add(name);
         panel2.add(quantity);
+        panel2.add(productidTf);
+        panel2.add(nameTf);
+        panel2.add(quantityTf);
+        panel2.add(price);
+        panel2.add(priceTf);
+        panel2.add(categoryCombo);
+        panel2.add(category);
+        panel2.add(add);
+        panel2.add(edit);
+        panel2.add(delete);
+
 
         
     
