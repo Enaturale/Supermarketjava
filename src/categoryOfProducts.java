@@ -1,7 +1,8 @@
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.*;
 
-public class categoryOfProducts {
+public class categoryOfProducts implements ActionListener {
 
     JFrame frame;
     JPanel main, category;
@@ -85,7 +86,7 @@ public class categoryOfProducts {
         addCategory.setBackground(Color.RED);
         addCategory.setBounds( 290, 230, 80, 30);
         addCategory.setFont(new Font(null, Font.BOLD, 15));
-        //addCategory.addActionListener(this);
+        addCategory.addActionListener(this);
 
 
         editCategory = new JButton("EDIT");
@@ -144,6 +145,14 @@ public class categoryOfProducts {
        
         frame.setVisible(true);
 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        updateAdmin updateadmin = new updateAdmin();
+        frame.dispose();
+        
     }
     
 }
