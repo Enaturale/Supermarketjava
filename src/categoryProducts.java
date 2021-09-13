@@ -1,10 +1,9 @@
-
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 import java.awt.event.*;
 
-public class seller implements ActionListener {
-    JFrame framely;
+public class categoryProducts implements ActionListener{
+    JFrame frame;
     JPanel panel1, panel2;
     JLabel nameOfSupermarket, iconLabel, manageLabel, productId, name, quantity, price, category, productsList;
     JTextField productidTf, nameTf, quantityTf, priceTf;
@@ -12,29 +11,26 @@ public class seller implements ActionListener {
     JButton add, edit, delete, clear;
 
     //headers for table
-    String [] columns = {"ID", "NAME", "PASSWORD", "GENDER"};
+    String [] columns = {"ID", "NAME", "DESCRIPTION"};
     //ACTUAL DATA
     Object[][] data = new Object[][]{ 
-        {1, "Ade", "1244","Male"}, 
-        {2, "Ade", "1244","Male"},
-        {3, "Ade", "1244","Female"},
-        {4, "Ade", "1244","Male"},
-        {5, "Ade", "1244","Female"}, 
-
-
-
+        {1, "Ade","Male"}, 
+        {2, "Ade", "Male"},
+        {3, "Ade","Female"},
+        {4, "Ade","Male"},
+        {5, "Ade","Female"}, 
     };
   
     JTable productsListTable;
 
 
-    seller(){
+    categoryProducts(){
 
-        framely = new JFrame("Seller's Page");
-        framely.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        framely.setSize(1300, 700);
-        framely.setLocation(20, 20);
-        framely.setLayout(null);
+        frame = new JFrame("Categories Page");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1300, 700);
+        frame.setLocation(20, 20);
+        frame.setLayout(null);
 
         panel1 = new JPanel();
         //panel1.setSize(1000, 600);
@@ -55,12 +51,12 @@ public class seller implements ActionListener {
         iconLabel.setIcon(new ImageIcon("src/shopcart.png"));
         iconLabel.setBounds(20, 150, 100, 100);
 
-        manageLabel = new JLabel("SELLER'S DASHBOARD");
+        manageLabel = new JLabel("CATEGORIES DASHBOARD");
         manageLabel.setForeground(Color.RED);
         manageLabel.setBounds(380, 20, 500, 50);
         manageLabel.setFont(new Font(null, Font.BOLD, 30));
 
-        productId = new JLabel("SELLER ID");
+        productId = new JLabel("CATEGORY ID");
         productId.setForeground(Color.RED);
         productId.setBounds(40, 80, 100, 30);
         productId.setFont(new Font(null, Font.BOLD, 15));
@@ -80,7 +76,7 @@ public class seller implements ActionListener {
 
         //quantity
 
-        quantity = new JLabel("PASSWORD");
+        quantity = new JLabel("DESCRIPTION");
         quantity.setForeground(Color.RED);
         quantity.setBounds(550, 80, 200, 30);
         quantity.setFont(new Font(null, Font.BOLD, 15));
@@ -101,15 +97,15 @@ public class seller implements ActionListener {
 
         //category
 
-        category = new JLabel("GENDER");
-        category.setForeground(Color.RED);
-        category.setBounds(550, 120, 200, 30);
-        category.setFont(new Font(null, Font.BOLD, 15));
+        // category = new JLabel("GENDER");
+        // category.setForeground(Color.RED);
+        // category.setBounds(550, 120, 200, 30);
+        // category.setFont(new Font(null, Font.BOLD, 15));
 
 
-        categoryCombo = new JComboBox<>(new Object[]{"  Male", "  Female"});
-        categoryCombo.setBounds( 660, 120, 200, 30);
-        categoryCombo.setForeground(Color.RED);
+        // categoryCombo = new JComboBox<>(new Object[]{"  Male", "  Female"});
+        // categoryCombo.setBounds( 660, 120, 200, 30);
+        // categoryCombo.setForeground(Color.RED);
 
         add = new JButton("ADD");
         add.setForeground(Color.WHITE);
@@ -141,7 +137,7 @@ public class seller implements ActionListener {
 
 
         //products Lists
-        productsList = new JLabel("SELLER'S LIST");
+        productsList = new JLabel("CATEGORIES LIST");
         productsList.setBounds(380, 290, 400, 50);
         productsList.setFont(new Font(null, Font.BOLD, 25));
         productsList.setForeground(Color.RED);
@@ -180,10 +176,10 @@ public class seller implements ActionListener {
        //panel2.add(productsListTable);
         
     
-        framely.add(panel1);
+        frame.add(panel1);
 
 
-        framely.setVisible(true);
+        frame.setVisible(true);
 
     }
 
@@ -191,10 +187,6 @@ public class seller implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
-
-        if(e.getSource() == add){
-            category categories = new category();
-        }
         
     }
     

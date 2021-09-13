@@ -6,7 +6,7 @@ public class products implements ActionListener, MouseListener{
 
     JFrame frame;
     JPanel panel1, panel2;
-    JLabel nameOfSupermarket, gotoSeller, iconLabel, manageLabel, productId, name, quantity, price, category, productsList;
+    JLabel nameOfSupermarket, gotoSeller, checkCategory, iconLabel, manageLabel, productId, name, quantity, price, category, productsList;
     JTextField productidTf, nameTf, quantityTf, priceTf;
     JComboBox categoryCombo;
     JButton addProduct, editProduct, deleteProduct, clearProduct;
@@ -55,6 +55,15 @@ public class products implements ActionListener, MouseListener{
         manageLabel.setForeground(Color.RED);
         manageLabel.setBounds(380, 20, 400, 50);
         manageLabel.setFont(new Font(null, Font.BOLD, 30));
+
+        gotoSeller = new JLabel("Seller Dashboard");
+        gotoSeller.setBounds(940, 25, 300, 40);
+        gotoSeller.setFont(new Font(null, Font.BOLD, 15));
+        gotoSeller.setForeground(Color.RED);
+        gotoSeller.addMouseListener(this);
+
+        
+        
  
         productId = new JLabel("PRODUCT ID");
         productId.setForeground(Color.RED);
@@ -162,6 +171,13 @@ public class products implements ActionListener, MouseListener{
         productsList.setFont(new Font(null, Font.BOLD, 25));
         productsList.setForeground(Color.RED);
 
+        checkCategory = new JLabel("Check Categories");
+        checkCategory.setBounds(940, 290, 300, 40);
+        checkCategory.setFont(new Font(null, Font.BOLD, 15));
+        checkCategory.setForeground(Color.RED);
+        checkCategory.addMouseListener(this);
+        
+
 
         productsListTable = new JTable(data, columns);  
         productsListTable.setFillsViewportHeight(true);
@@ -170,9 +186,7 @@ public class products implements ActionListener, MouseListener{
         scrollTable.setBounds(40,360, 900, 80); 
         scrollTable.setFont(new Font(null, Font.BOLD, 20));
 
-        gotoSeller = new JLabel("Seller Dashboard");
-        gotoSeller.setBounds(100, 270, 300, 40);
-        gotoSeller.addMouseListener(this);
+        
 
         panel1.add(nameOfSupermarket);   
         panel1.add(iconLabel);  
@@ -197,6 +211,7 @@ public class products implements ActionListener, MouseListener{
         panel2.add(clearProduct);
         panel2.add(productsList);
         panel2.add(scrollTable);
+        panel2.add(checkCategory);
        //panel2.add(productsListTable);
         
     
@@ -218,9 +233,17 @@ public class products implements ActionListener, MouseListener{
     @Override
     public void mouseClicked(MouseEvent e) {
         // TODO Auto-generated method stub
-         sellersDashboard sellers = new sellersDashboard();
-         frame.dispose();
-        // frame.setVisible(true);
+     if(e.getSource() == gotoSeller){
+     sellersDashboard sellers = new sellersDashboard();
+     frame.dispose();
+    //     // frame.setVisible(true);
+    }
+
+      if(e.getSource() == checkCategory){
+      categoryOfProducts categories = new categoryOfProducts();
+        frame.dispose();
+       // frame.setVisible(true);
+   }
 
         
     }
@@ -240,6 +263,8 @@ public class products implements ActionListener, MouseListener{
     @Override
     public void mouseEntered(MouseEvent e) {
         // TODO Auto-generated method stub
+    //categoryProducts categoryofproducts = new categoryProducts();
+
         
     }
 
