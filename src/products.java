@@ -2,14 +2,14 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class products implements ActionListener{
+public class products implements ActionListener, MouseListener{
 
     JFrame frame;
     JPanel panel1, panel2;
-    JLabel nameOfSupermarket, iconLabel, manageLabel, productId, name, quantity, price, category, productsList;
+    JLabel nameOfSupermarket, gotoSeller, iconLabel, manageLabel, productId, name, quantity, price, category, productsList;
     JTextField productidTf, nameTf, quantityTf, priceTf;
     JComboBox categoryCombo;
-    JButton add, edit, delete, clear;
+    JButton addProduct, editProduct, deleteProduct, clearProduct;
 
     //headers for table
     String [] columns = {"ID", "NAME", "QUANTITY", "PRICE", "CATEGORY"};
@@ -107,33 +107,53 @@ public class products implements ActionListener{
         categoryCombo.setBounds( 170, 160, 200, 30);
         categoryCombo.setForeground(Color.RED);
 
-        add = new JButton("ADD");
-        add.setForeground(Color.WHITE);
-        add.setBackground(Color.RED);
-        add.setBounds( 290, 250, 80, 30);
-        add.setFont(new Font(null, Font.BOLD, 15));
-        add.addActionListener(this);
+        addProduct = new JButton("ADD");
+        //addseller.addActionListener(this);
+        addProduct.setForeground(Color.WHITE);
+        addProduct.setBackground(Color.RED);
+        addProduct.setBounds( 290, 250, 80, 30);
+        addProduct.setFont(new Font(null, Font.BOLD, 15));
+        addProduct.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+              //  sellersDashboard seller = new sellersDashboard();
+                //framely.setVisible(true);
+            }
+            
+        });
+        
 
 
-        edit = new JButton("EDIT");
-        edit.setForeground(Color.WHITE);
-        edit.setBackground(Color.RED);
-        edit.setBounds( 400, 250, 80, 30);
-        edit.setFont(new Font(null, Font.BOLD, 15));
+        editProduct = new JButton("EDIT");
+        editProduct.setForeground(Color.WHITE);
+        editProduct.setBackground(Color.RED);
+        editProduct.setBounds( 400, 250, 80, 30);
+        editProduct.setFont(new Font(null, Font.BOLD, 15));
+        editProduct.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO Auto-generated method stub
+                // seller seller = new seller();
+                //framely.setVisible(true);
+            }
+            
+        });
 
 
-        delete = new JButton("DELETE");
-        delete.setForeground(Color.WHITE);
-        delete.setBackground(Color.RED);
-        delete.setBounds( 500, 250, 100, 30);
-        delete.setFont(new Font(null, Font.BOLD, 15));
+        deleteProduct = new JButton("DELETE");
+        deleteProduct.setForeground(Color.WHITE);
+        deleteProduct.setBackground(Color.RED);
+        deleteProduct.setBounds( 500, 250, 100, 30);
+        deleteProduct.setFont(new Font(null, Font.BOLD, 15));
 
 
-        clear = new JButton("CLEAR");
-        clear.setForeground(Color.WHITE);
-        clear.setBackground(Color.RED);
-        clear.setBounds( 630, 250, 100, 30);
-        clear.setFont(new Font(null, Font.BOLD, 15));
+        clearProduct = new JButton("CLEAR");
+        clearProduct.setForeground(Color.WHITE);
+        clearProduct.setBackground(Color.RED);
+        clearProduct.setBounds( 630, 250, 100, 30);
+        clearProduct.setFont(new Font(null, Font.BOLD, 15));
 
 
         //products Lists
@@ -150,10 +170,15 @@ public class products implements ActionListener{
         scrollTable.setBounds(40,360, 900, 80); 
         scrollTable.setFont(new Font(null, Font.BOLD, 20));
 
+        gotoSeller = new JLabel("Seller Dashboard");
+        gotoSeller.setBounds(100, 270, 300, 40);
+        gotoSeller.addMouseListener(this);
 
         panel1.add(nameOfSupermarket);   
         panel1.add(iconLabel);  
         panel1.add(panel2);
+
+        panel2.add(gotoSeller);
         
         panel2.add(manageLabel);
         panel2.add(productId);
@@ -166,18 +191,16 @@ public class products implements ActionListener{
         panel2.add(priceTf);
         panel2.add(categoryCombo);
         panel2.add(category);
-        panel2.add(add);
-        panel2.add(edit);
-        panel2.add(delete);
-        panel2.add(clear);
+        panel2.add(addProduct);
+        panel2.add(editProduct);
+        panel2.add(deleteProduct);
+        panel2.add(clearProduct);
         panel2.add(productsList);
         panel2.add(scrollTable);
        //panel2.add(productsListTable);
         
     
         frame.add(panel1);
-
-
         frame.setVisible(true);
 
     }
@@ -185,9 +208,44 @@ public class products implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
-        if(e.getSource() ==add){
-            seller sellers = new seller();
-        }
+        // if(e.getSource() == addseller){
+        //     newpage sellersPage = new newpage();
+        //     frame.setVisible(true);
+        //     //frame.dispose();
+        // }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        // TODO Auto-generated method stub
+         sellersDashboard sellers = new sellersDashboard();
+         frame.dispose();
+        // frame.setVisible(true);
+
+        
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        // TODO Auto-generated method stub
         
     }
     
