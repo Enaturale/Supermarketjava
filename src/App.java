@@ -1,3 +1,5 @@
+import java.sql.*;
+
 public class App {
     public static void main(String[] args) throws Exception {
         //System.out.println("Hello, World!");
@@ -16,7 +18,28 @@ public class App {
                 //e1.printStackTrace();
             }    
             login loginscreen = new login();
-            splashscreen.frame.dispose();      
+            splashscreen.frame.dispose();     
+            
+            
+
+
+            //connecting the mysql database
+            try{
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/supermarket", "root", "rrot"
+                    );
+                Statement stmt = con.createStatement();
+                ResultSet rs = stmt.executeQuery("select * from emp");
+                while(rs.next()){
+                System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getString(3));
+                }
+                con.close();
+
+            }catch(Exception e){
+                System.out.println(e);
+
+            }
 
 
         }
