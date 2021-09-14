@@ -42,7 +42,7 @@ public class splash implements MouseListener {
         
 
         progressstatus = new JLabel("%");
-        progressstatus.setBounds(200, 300, 20, 20);
+        progressstatus.setBounds(200, 280, 80, 70);
         progressstatus.setFont(new Font(null, Font.ITALIC, 20));
         progressstatus.setForeground(Color.WHITE);
 
@@ -66,8 +66,21 @@ public class splash implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         // TODO Auto-generated method stub
-        login loginscreen = new login();
-        frame.dispose();
+        // for(int i = 0; i<=100; i++){
+        //     try {
+        //         Thread.sleep(40);
+        //         progress.setValue(i);
+        //         progressstatus.setText(Integer.toString(i) + "%");
+
+        //     } catch (InterruptedException e1) {
+        //         // TODO Auto-generated catch block
+        //         //e1.printStackTrace();
+        //     }           
+
+
+        // }
+        // login loginscreen = new login();
+        // frame.dispose();
         
     }
 
